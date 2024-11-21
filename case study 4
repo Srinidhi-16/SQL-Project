@@ -1,0 +1,33 @@
+ Case Study 4 : Retail Store Inventory System
+
+Scenario:      
+Design a database to manage a retail store's inventory, suppliers, and sales.
+
+      Tasks:      
+1.  Create the Database:      
+   - Name the database `RetailDB`.
+
+2.       Create Tables:      
+   -       Products Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `price`: DECIMAL(10, 2), Not Null, Check Price > 0
+     - `stock`: INT, Not Null, Check Stock >= 0
+   -       Suppliers Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `contact`: VARCHAR(50)
+   -       Sales Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `product_id`: INT, Foreign Key References `Products(id)`
+     - `date`: DATE, Not Null
+     - `quantity`: INT, Not Null, Check Quantity > 0
+     - `total_price`: DECIMAL(10, 2), Not Null
+
+3.   Insert Sample Data.      
+4.   Queries:      
+   - List all products.
+   - Show products with stock less than 10.
+   - List sales with product names and total prices.
+   - Calculate the total sales for each product.
+
