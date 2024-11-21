@@ -1,0 +1,38 @@
+Case Study 2: Library Management System
+
+Scenario:      
+You are tasked with creating a database to manage a library's inventory, members, and borrowing records. 
+
+      Tasks:      
+1.       Create the Database:      
+   - Name the database `LibraryDB`.
+
+2.       Create Tables:      
+   -       Books Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `title`: VARCHAR(100), Not Null
+     - `author`: VARCHAR(50), Not Null
+     - `published_year`: YEAR, Not Null
+     - `genre`: VARCHAR(30)
+   -       Members Table:      
+     - `id`: IN
+T, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `membership_date`: DATE, Not Null
+   -       Borrowing Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `book_id`: INT, Foreign
+ Key References `Books(id)`
+     - `member_id`: INT, Foreign Key References `Members(id)`
+     - `borrow_date`: DATE, Not Null
+     - `return_date`: DATE
+
+3.       Insert Sample Data.      
+
+4.       Queries:      
+   - List all books.
+   - List all members.Show borrowing records with member names and book titles.
+   - Show borrowing records with member names and book titles.
+   - Count the number of books borrowed by each member.
+
+
