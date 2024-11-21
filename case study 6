@@ -1,0 +1,35 @@
+  Case Study 6: Online Learning Platform
+
+Scenario:      
+Design a database for an online learning platform to manage courses, instructors, and student enrollments.
+
+      Tasks:      
+1.  Create the Database:      
+   - Name the database `LearningDB`.
+
+2.       Create Tables:      
+   -       Courses Table:      
+     -c `id`: INT, Primary Key, Auto Increment
+     - `title`: VARCHAR(100), Not Null
+     - `description`: TEXT
+   -       Instructors Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `expertise`: VARCHAR(50), Not Null
+   -       Students Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `email`: VARCHAR(50), Not Null, Unique
+   -       Enrollments Table:      
+     - `student_id`: INT, Foreign Key References `Students(id)`
+     - `course_id`: INT, Foreign Key References `Courses(id)`
+     - `enrollment_date`: DATE, Not Null
+     - Primary Key (`student_id`, `course_id`)
+
+3.  Insert Sample Data.      
+4.  Queries:      
+   - List all courses.
+   - List all instructors.
+   - Show enrollments with student names and course titles.
+   - Count the number of students enrolled in each course.
+
