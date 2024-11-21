@@ -1,0 +1,32 @@
+ Case Study 3: Student Management System
+
+Scenario:      
+Create a database to manage students, their courses, and grades.
+
+    Tasks:      
+1.   Create the Database:      
+   - Name the database `StudentDB`.
+
+2.       Create Tables:      
+   -       Students Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `age`: INT, Not Null
+     - `email`: VARCHAR(50), Not Null, Unique
+   -       Courses Table:      
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+   -       Enrollments Table:      
+     - `student_id`: INT, Foreign Key References `Students(id)`
+     - `course_id`: INT, Foreign Key References `Courses(id)`
+     - `grade`: CHAR(1)
+     - Primary Key (`student_id`, `course_id`)
+
+3.  Insert Sample Data.
+      
+4.  Queries:    
+  
+   - List all students.
+   - List all courses.
+   - Show the names of students and the courses they are enrolled in.
+   - Count the number of students in each course.
