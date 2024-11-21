@@ -1,0 +1,63 @@
+ Case Study 1 : Employee Management System
+
+#  Scenario:
+You have been hired as a database administrator for a new company, and you need to create an Employee Management System to keep track of the employees,
+their departments, projects they are working on, and their attendance.
+
+  Task List:
+
+1.   Create the Database:  
+   - Name the database `EmployeeManagement`.
+
+2.   Create Tables:  
+   -   Departments Table:  
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+   -   Employees Table:  
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `age`: INT, Not Null
+     - `gender`: VARCHAR(10), Not Null
+     - `salary`: INT, Not Null, Check Salary > 30000
+     - `department_id`: INT, Foreign Key References `Departments(id)`
+   -   Projects Table:  
+     - `id`: INT, Primary Key, Auto Increment
+     - `name`: VARCHAR(50), Not Null
+     - `budget`: INT, Not Null, Check Budget > 10000
+   -   Employee_Projects Table:  
+     - `employee_id`: INT, Foreign Key References `Employees(id)`
+     - `project_id`: INT, Foreign Key References `Projects(id)`
+     - Primary Key (`employee_id`, `project_id`)
+   -   Attendance Table:  
+     - `id`: INT, Primary Key, Auto Increment
+     - `id`: INT, Primary Key, Auto Increment
+     - `employee_id`: INT, Foreign Key References `Employees(id)`
+     - `date`: DATE, Not Null
+     - `status`: ENUM('Present', 'Absent', 'On Leave')
+
+3.   Insert Sample Data:  
+   - Insert data into `Departments`, `Employees`, `Projects`, `Employee_Projects`, and `Attendance` tables.
+
+4.   Queries:  
+   R- Retrieve all employ ees.
+   - Retrieve all employees in the 'IT' department.
+   - List all projects with a budget greater than 50000.
+   - Show the names of employees and the projects they are working on.
+   - Count the number of employees in each department.
+   - Find employees with a salary greater than 50000.
+   - Get attendance records for a specific employee.
+
+5.   Update Records:  
+   - Increase the salary of employees in the 'HR' department by 10%.
+   - Change the department of an employee.
+
+
+6.   Delete Records:  
+   - CRemove an employee who has resigned.
+   - Delete a project that is completed.ccc
+
+7.   Constraints and Modifications:  
+   - Add a unique constraint to the `email` column in `Employees` table.
+   - Ensure `age` is always greater than 18.
+   - Add a default value 'Unknown' to `gender` if not specified.
+
